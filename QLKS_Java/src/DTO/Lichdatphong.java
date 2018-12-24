@@ -5,15 +5,22 @@
  */
 package DTO;
 
+import java.util.Date;
+
 /**
  *
  * @author HOÀNGQUANGHUY
  */
 public class Lichdatphong {
+
+  
     private int MaPhong;
     private String TenPhong;
     private String LoaiPhong;
     private double GiaPhong;
+    private String TinhTrang;
+    private Date Ngaydat;
+    private Date Ngaytra;
     public Lichdatphong(){
 }
     
@@ -78,6 +85,47 @@ public class Lichdatphong {
      */
     public void setGiaPhong(double GiaPhong) {
         this.GiaPhong = GiaPhong;
+    }
+
+    /**
+     * @return the Ngaydat
+     */
+    public Date getNgaydat() {
+        return Ngaydat;
+    }
+
+    /**
+     * @param Ngaydat the Ngaydat to set
+     */
+    public void setNgaydat(Date Ngaydat) {
+        this.Ngaydat = Ngaydat;
+    }
+
+    /**
+     * @return the Ngaytra
+     */
+    public Date getNgaytra() {
+        return Ngaytra;
+    }
+
+    /**
+     * @param Ngaytra the Ngaytra to set
+     */
+    public void setNgaytra(Date Ngaytra) {
+        this.Ngaytra = Ngaytra;
+    }
+      /**
+     * @return the TinhTrang
+     */
+    public String getTinhTrang() {
+        return TinhTrang;
+    }
+
+    /**
+     * @param TinhTrang the TinhTrang to set
+     */
+    public void setTinhTrang(String TinhTrang) {
+        this.TinhTrang = TinhTrang;
     }
     
 }

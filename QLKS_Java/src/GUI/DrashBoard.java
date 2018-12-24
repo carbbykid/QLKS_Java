@@ -5,8 +5,12 @@
  */
 package GUI;
 
+import DAL.DAL;
 import DTO.Lichdatphong;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 
@@ -26,9 +30,19 @@ public class DrashBoard extends javax.swing.JFrame {
     public DrashBoard() {
         initComponents();
         this.setLocationRelativeTo(null);
-        list= new ArrayList<Lichdatphong>();
+        list= new DAL().GetLichdatphong();
         model = (DefaultTableModel) tbdatphong.getModel();
+       ShowTable();
+        
     }
+    void ShowTable()
+    {
+        for (Lichdatphong Beo : list)
+        {
+            model.addRow(new Object[]{i++,Beo.getMaPhong(),Beo.getTenPhong(),Beo.getLoaiPhong(),Beo.getGiaPhong(),Beo.getTinhTrang(),Beo.getNgaydat(),Beo.getNgaytra()});
+        }
+    }
+   
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -66,23 +80,10 @@ public class DrashBoard extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        getContentPane().setLayout(null);
-
-        jPanel1.setLayout(null);
 
         textMaphong.setText("Mã phòng:");
-        jPanel1.add(textMaphong);
-        textMaphong.setBounds(10, 80, 61, 16);
-        jPanel1.add(txtGiaphong);
-        txtGiaphong.setBounds(90, 200, 130, 22);
 
         textLoaiphong.setText("Loại Phòng:");
-        jPanel1.add(textLoaiphong);
-        textLoaiphong.setBounds(10, 160, 67, 16);
-        jPanel1.add(txtLoaiphong);
-        txtLoaiphong.setBounds(90, 160, 130, 22);
-        jPanel1.add(ImageRoom);
-        ImageRoom.setBounds(10, 230, 210, 116);
 
         btnDatphong.setText("Đặt Phòng");
         btnDatphong.addActionListener(new java.awt.event.ActionListener() {
@@ -90,8 +91,6 @@ public class DrashBoard extends javax.swing.JFrame {
                 btnDatphongActionPerformed(evt);
             }
         });
-        jPanel1.add(btnDatphong);
-        btnDatphong.setBounds(10, 360, 91, 25);
 
         btnRefresh.setText("Refresh");
         btnRefresh.addActionListener(new java.awt.event.ActionListener() {
@@ -99,33 +98,81 @@ public class DrashBoard extends javax.swing.JFrame {
                 btnRefreshActionPerformed(evt);
             }
         });
-        jPanel1.add(btnRefresh);
-        btnRefresh.setBounds(130, 360, 90, 25);
 
         textTenphong.setText("Tên phòng:");
-        jPanel1.add(textTenphong);
-        textTenphong.setBounds(10, 120, 66, 16);
-        jPanel1.add(txtMaphong);
-        txtMaphong.setBounds(90, 80, 130, 22);
 
         tbdatphong.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "STT", "Mã phòng", "Tên phòng", "Loại phòng", "Giá phòng", "Tình trạng"
+                "STT", "Mã phòng", "Tên phòng", "Loại phòng", "Giá phòng", "Tình trạng", "Ngày thuê", "Ngày trả"
             }
         ));
         jScrollPane1.setViewportView(tbdatphong);
 
-        jPanel1.add(jScrollPane1);
-        jScrollPane1.setBounds(240, 80, 790, 310);
-
         textGiaphong.setText("Giá phòng:");
-        jPanel1.add(textGiaphong);
-        textGiaphong.setBounds(10, 200, 62, 16);
-        jPanel1.add(txtTenphong);
-        txtTenphong.setBounds(90, 120, 130, 22);
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(10, 10, 10)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(textMaphong)
+                        .addGap(19, 19, 19)
+                        .addComponent(txtMaphong, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(textTenphong)
+                        .addGap(14, 14, 14)
+                        .addComponent(txtTenphong, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(textLoaiphong)
+                        .addGap(13, 13, 13)
+                        .addComponent(txtLoaiphong, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(textGiaphong)
+                        .addGap(18, 18, 18)
+                        .addComponent(txtGiaphong, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(ImageRoom, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(btnDatphong)
+                        .addGap(29, 29, 29)
+                        .addComponent(btnRefresh, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(20, 20, 20)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 790, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(80, 80, 80)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(textMaphong)
+                            .addComponent(txtMaphong, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(textTenphong)
+                            .addComponent(txtTenphong, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(textLoaiphong)
+                            .addComponent(txtLoaiphong, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(textGiaphong)
+                            .addComponent(txtGiaphong, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(8, 8, 8)
+                        .addComponent(ImageRoom, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(14, 14, 14)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnDatphong)
+                            .addComponent(btnRefresh)))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)))
+        );
 
         jTabbedPane1.addTab("Drasboard", jPanel1);
 
@@ -213,15 +260,28 @@ public class DrashBoard extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Service", jPanel5);
 
-        getContentPane().add(jTabbedPane1);
-        jTabbedPane1.setBounds(0, 70, 1040, 480);
-
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 30)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 0, 51));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Quản lí Khách Sạn Mường Thanh");
-        getContentPane().add(jLabel1);
-        jLabel1.setBounds(200, 0, 620, 70);
+        jLabel1.setText("Quản lí Khách Sạn POPO");
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1040, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 620, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(194, 194, 194))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -243,7 +303,29 @@ public class DrashBoard extends javax.swing.JFrame {
         Beo.setTenPhong(txtTenphong.getText());
         Beo.setLoaiPhong(txtLoaiphong.getText());
         Beo.setGiaPhong(Double.parseDouble(txtGiaphong.getText()));
+        Beo.setTinhTrang("Con trong");
+        try{
+            Beo.setNgaydat(new SimpleDateFormat("dd/MM/yyyy").parse("25/12/2018"));
+         } catch(ParseException ex)
+         {
+             JOptionPane.showMessageDialog(rootPane, "Khongn them ngay dat dc");
+             ex.printStackTrace();
+         } 
+        
+         try{
+            Beo.setNgaytra(new SimpleDateFormat("dd/MM/yyyy").parse("30/12/2018"));
+         } catch(ParseException eb)
+         {  JOptionPane.showMessageDialog(rootPane, "Khong them ngay tra phong dc");
+             eb.printStackTrace();
+         }
         list.add(Beo);
+        if (new DAL().addLichdatphong(Beo))
+                {
+                    JOptionPane.showMessageDialog(rootPane, "Them thanh cong vao database");
+                }
+        else{
+                    JOptionPane.showMessageDialog(rootPane, "Them that bai");
+                }
         showResult();
 
     }//GEN-LAST:event_btnDatphongActionPerformed
@@ -252,7 +334,7 @@ public class DrashBoard extends javax.swing.JFrame {
     {
         Lichdatphong  s=list.get(list.size()-1);
     model.addRow(new Object[]{
-        i++,s.getMaPhong(),s.getTenPhong(),s.getLoaiPhong(),s.getGiaPhong()
+        i++,s.getMaPhong(),s.getTenPhong(),s.getLoaiPhong(),s.getGiaPhong(),s.getTinhTrang(),s.getNgaydat(),s.getNgaytra()
     
     });
             }

@@ -9,13 +9,14 @@ package GUI;
  *
  * @author HOÀNGQUANGHUY
  */
-public class PhieuDatPhong extends javax.swing.JFrame {
+public class Phieudatphong extends javax.swing.JFrame {
 
     /**
-     * Creates new form PhieuDatPhong
+     * Creates new form Phieudatphong
      */
-    public PhieuDatPhong() {
+    public Phieudatphong() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -27,17 +28,217 @@ public class PhieuDatPhong extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        textPhieudatphong = new javax.swing.JLabel();
+        textMaphieu = new javax.swing.JLabel();
+        textNgaydatphong = new javax.swing.JLabel();
+        textNgaytraphong = new javax.swing.JLabel();
+        textSoluongkhach = new javax.swing.JLabel();
+        txtMaphieu = new javax.swing.JTextField();
+        txtNgaydatphong = new javax.swing.JTextField();
+        txtNgaytraphong = new javax.swing.JTextField();
+        txtSoluongkhach = new javax.swing.JTextField();
+        textHovaten = new javax.swing.JLabel();
+        txtHovaten = new javax.swing.JTextField();
+        textSoCMND = new javax.swing.JLabel();
+        txtSoCMND = new javax.swing.JTextField();
+        txtDiachi = new javax.swing.JTextField();
+        textDiachi = new javax.swing.JLabel();
+        textSodienthoai = new javax.swing.JLabel();
+        txtSodt = new javax.swing.JTextField();
+        txtTenphong = new javax.swing.JTextField();
+        textTenphong = new javax.swing.JLabel();
+        textGiaphong = new javax.swing.JLabel();
+        txtLoaiphong = new javax.swing.JTextField();
+        jProgressBar1 = new javax.swing.JProgressBar();
+        textLoaiphong = new javax.swing.JLabel();
+        txtGiaphong = new javax.swing.JTextField();
+        btnXacnhan = new javax.swing.JButton();
+        btnHuy = new javax.swing.JButton();
+        txtSongay = new javax.swing.JTextField();
+        textSongay = new javax.swing.JLabel();
+        textGioitinh = new javax.swing.JLabel();
+        txtGioitinh = new javax.swing.JTextField();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(204, 204, 255));
+
+        textPhieudatphong.setFont(new java.awt.Font("Tahoma", 1, 25)); // NOI18N
+        textPhieudatphong.setForeground(new java.awt.Color(0, 204, 153));
+        textPhieudatphong.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        textPhieudatphong.setText("Phiếu Đặt Phòng");
+
+        textMaphieu.setText("Mã Phiếu");
+
+        textNgaydatphong.setText("Ngày đặt phòng");
+
+        textNgaytraphong.setText("Ngày trả phòng");
+
+        textSoluongkhach.setText("Số lượng khách");
+
+        textHovaten.setText("Họ và tên KH");
+
+        textSoCMND.setText("Số CMND");
+
+        textDiachi.setText("Địa chỉ");
+
+        textSodienthoai.setText("Số điện thoại");
+
+        textTenphong.setText("Tên Phòng");
+
+        textGiaphong.setText("Giá Phòng");
+
+        textLoaiphong.setText("Loại Phòng");
+
+        btnXacnhan.setText("Xác nhận");
+
+        btnHuy.setText("Hủy");
+
+        textSongay.setText("Số Ngày");
+
+        textGioitinh.setText("Giới tính");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(240, 240, 240)
+                        .addComponent(textPhieudatphong, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(80, 80, 80)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(textMaphieu, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(textNgaydatphong, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(30, 30, 30)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtMaphieu, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtNgaydatphong, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(80, 80, 80)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(textHovaten, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(textSoCMND, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(textGioitinh))
+                        .addGap(20, 20, 20)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtHovaten, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtSoCMND, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtGioitinh, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(80, 80, 80)
+                        .addComponent(textNgaytraphong, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(20, 20, 20)
+                        .addComponent(txtNgaytraphong, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(80, 80, 80)
+                        .addComponent(textDiachi)
+                        .addGap(71, 71, 71)
+                        .addComponent(txtDiachi, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(80, 80, 80)
+                        .addComponent(textSongay)
+                        .addGap(73, 73, 73)
+                        .addComponent(txtSongay, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(80, 80, 80)
+                        .addComponent(textSodienthoai)
+                        .addGap(35, 35, 35)
+                        .addComponent(txtSodt, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(80, 80, 80)
+                        .addComponent(textSoluongkhach, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(30, 30, 30)
+                        .addComponent(txtSoluongkhach, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(80, 80, 80)
+                        .addComponent(jProgressBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 630, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(80, 80, 80)
+                        .addComponent(textTenphong, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(30, 30, 30)
+                        .addComponent(txtTenphong, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(80, 80, 80)
+                        .addComponent(textGiaphong)
+                        .addGap(45, 45, 45)
+                        .addComponent(txtGiaphong, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(80, 80, 80)
+                        .addComponent(textLoaiphong, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(30, 30, 30)
+                        .addComponent(txtLoaiphong, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(222, 222, 222)
+                        .addComponent(btnXacnhan, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(47, 47, 47)
+                        .addComponent(btnHuy, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(80, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(30, 30, 30)
+                .addComponent(textPhieudatphong, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(textHovaten)
+                        .addGap(14, 14, 14)
+                        .addComponent(textSoCMND)
+                        .addGap(14, 14, 14)
+                        .addComponent(textGioitinh))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(txtHovaten, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(8, 8, 8)
+                        .addComponent(txtSoCMND, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(8, 8, 8)
+                        .addComponent(txtGioitinh, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(textMaphieu)
+                                .addGap(24, 24, 24)
+                                .addComponent(textNgaydatphong))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(txtMaphieu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(txtNgaydatphong, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addGap(8, 8, 8)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(textNgaytraphong)
+                    .addComponent(txtNgaytraphong, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(textDiachi)
+                    .addComponent(txtDiachi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(8, 8, 8)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(8, 8, 8)
+                        .addComponent(textSongay))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(5, 5, 5)
+                        .addComponent(txtSongay, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(textSodienthoai)
+                    .addComponent(txtSodt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(13, 13, 13)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(textSoluongkhach)
+                    .addComponent(txtSoluongkhach, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(jProgressBar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(26, 26, 26)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(textTenphong)
+                    .addComponent(txtTenphong, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(textGiaphong)
+                    .addComponent(txtGiaphong, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(textLoaiphong)
+                    .addComponent(txtLoaiphong, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(29, 29, 29)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnXacnhan)
+                    .addComponent(btnHuy))
+                .addContainerGap(25, Short.MAX_VALUE))
         );
 
         pack();
@@ -60,24 +261,54 @@ public class PhieuDatPhong extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(PhieuDatPhong.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Phieudatphong.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(PhieuDatPhong.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Phieudatphong.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(PhieuDatPhong.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Phieudatphong.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(PhieuDatPhong.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Phieudatphong.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new PhieuDatPhong().setVisible(true);
+                new Phieudatphong().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnHuy;
+    private javax.swing.JButton btnXacnhan;
+    private javax.swing.JProgressBar jProgressBar1;
+    private javax.swing.JLabel textDiachi;
+    private javax.swing.JLabel textGiaphong;
+    private javax.swing.JLabel textGioitinh;
+    private javax.swing.JLabel textHovaten;
+    private javax.swing.JLabel textLoaiphong;
+    private javax.swing.JLabel textMaphieu;
+    private javax.swing.JLabel textNgaydatphong;
+    private javax.swing.JLabel textNgaytraphong;
+    private javax.swing.JLabel textPhieudatphong;
+    private javax.swing.JLabel textSoCMND;
+    private javax.swing.JLabel textSodienthoai;
+    private javax.swing.JLabel textSoluongkhach;
+    private javax.swing.JLabel textSongay;
+    private javax.swing.JLabel textTenphong;
+    private javax.swing.JTextField txtDiachi;
+    private javax.swing.JTextField txtGiaphong;
+    private javax.swing.JTextField txtGioitinh;
+    private javax.swing.JTextField txtHovaten;
+    private javax.swing.JTextField txtLoaiphong;
+    private javax.swing.JTextField txtMaphieu;
+    private javax.swing.JTextField txtNgaydatphong;
+    private javax.swing.JTextField txtNgaytraphong;
+    private javax.swing.JTextField txtSoCMND;
+    private javax.swing.JTextField txtSodt;
+    private javax.swing.JTextField txtSoluongkhach;
+    private javax.swing.JTextField txtSongay;
+    private javax.swing.JTextField txtTenphong;
     // End of variables declaration//GEN-END:variables
 }
