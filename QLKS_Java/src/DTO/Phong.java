@@ -10,10 +10,10 @@ package DTO;
  * @author HOÀNGQUANGHUY
  */
 public class Phong {
-        private String MaPhong ;
+        private int MaPhong ;
 	private String TenPhong ;
         private String LoaiPhong;
-        private Double GiaPhong;
+        private int GiaPhong;
 	private String TinhTrang;
 	private String GhiChu;
         public Phong(){};
@@ -22,14 +22,14 @@ public class Phong {
     /**
      * @return the MaPhong
      */
-    public String getMaPhong() {
+    public int getMaPhong() {
         return MaPhong;
     }
 
     /**
      * @param MaPhong the MaPhong to set
      */
-    public void setMaPhong(String MaPhong) {
+    public void setMaPhong(int MaPhong) {
         this.MaPhong = MaPhong;
     }
 
@@ -64,14 +64,14 @@ public class Phong {
     /**
      * @return the GiaPhong
      */
-    public Double getGiaPhong() {
+    public int getGiaPhong() {
         return GiaPhong;
     }
 
     /**
      * @param GiaPhong the GiaPhong to set
      */
-    public void setGiaPhong(Double GiaPhong) {
+    public void setGiaPhong(int GiaPhong) {
         this.GiaPhong = GiaPhong;
     }
 

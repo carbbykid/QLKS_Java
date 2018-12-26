@@ -30,7 +30,7 @@ public class DrashBoard extends javax.swing.JFrame {
     public DrashBoard() {
         initComponents();
         this.setLocationRelativeTo(null);
-        list= new DAL().GetLichdatphong();
+        //list= new DAL().GetLichdatphong();
         model = (DefaultTableModel) tbdatphong.getModel();
        ShowTable();
         
@@ -174,7 +174,7 @@ public class DrashBoard extends javax.swing.JFrame {
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
 
-        jTabbedPane1.addTab("Drasboard", jPanel1);
+        jTabbedPane1.addTab("Lịch Phòng", jPanel1);
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -204,7 +204,8 @@ public class DrashBoard extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jButton2)
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 798, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 786, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -219,7 +220,7 @@ public class DrashBoard extends javax.swing.JFrame {
                 .addGap(83, 83, 83))
         );
 
-        jTabbedPane1.addTab("Room", jPanel2);
+        jTabbedPane1.addTab("Quản lí phòng", jPanel2);
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -232,7 +233,7 @@ public class DrashBoard extends javax.swing.JFrame {
             .addGap(0, 450, Short.MAX_VALUE)
         );
 
-        jTabbedPane1.addTab("Service", jPanel3);
+        jTabbedPane1.addTab("Dịch vụ", jPanel3);
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -245,7 +246,7 @@ public class DrashBoard extends javax.swing.JFrame {
             .addGap(0, 450, Short.MAX_VALUE)
         );
 
-        jTabbedPane1.addTab("Custumer", jPanel4);
+        jTabbedPane1.addTab("Khách hàng", jPanel4);
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -258,7 +259,7 @@ public class DrashBoard extends javax.swing.JFrame {
             .addGap(0, 450, Short.MAX_VALUE)
         );
 
-        jTabbedPane1.addTab("Service", jPanel5);
+        jTabbedPane1.addTab("Báo cáo", jPanel5);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 30)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 0, 51));
@@ -319,14 +320,14 @@ public class DrashBoard extends javax.swing.JFrame {
              eb.printStackTrace();
          }
         list.add(Beo);
-        if (new DAL().addLichdatphong(Beo))
+       /* if (new DAL().addLichdatphong(Beo))
                 {
                     JOptionPane.showMessageDialog(rootPane, "Them thanh cong vao database");
                 }
-        else{
+         else{
                     JOptionPane.showMessageDialog(rootPane, "Them that bai");
                 }
-        showResult();
+        //showResult();*/
 
     }//GEN-LAST:event_btnDatphongActionPerformed
     int i=0;

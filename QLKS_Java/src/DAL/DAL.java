@@ -5,7 +5,9 @@
  */
 package DAL;
 
-import DTO.Lichdatphong;
+
+import DTO.Khachhang;
+import DTO.Phong;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.DriverManager;
@@ -26,43 +28,43 @@ public class DAL {
             }catch(Exception e){
             e.printStackTrace();}     
             }
-        public boolean addLichdatphong(Lichdatphong s)
+        public boolean addPhong(Phong s)
         {
-            String sql="INSERT INTO tbLICHDATPHONG (MaPhong,TenPhong,LoaiPhong,GiaPhong,TinhTrangPhong,NgayBDThue,NgayKTThue)"
-                    + "VALUE(?,?,?,?,?,?,?)";
+            String sql="INSERT INTO Phong(MaPhong, TenPhong, LoaiPhong, GiaPhong, TinhTrang, GhiChu)"
+                    + "VALUES(?,?,?,?,?,?)";
             try {
                 PreparedStatement ps=conn.prepareStatement(sql);
                 ps.setInt(1,s.getMaPhong());
                 ps.setString(2,s.getTenPhong());
                 ps.setString(3,s.getLoaiPhong());
-                ps.setDouble(4,s.getGiaPhong());
+                ps.setInt(4,s.getGiaPhong());
                 ps.setString(5,s.getTinhTrang());
-                ps.setDate(6,new Date(s.getNgaydat().getTime()));
-                ps.setDate(7,new Date(s.getNgaytra().getTime()));
-                return ps.executeUpdate()>0;
+                ps.setString(6,s.getGhiChu());
+               // ps.setDate(6,new Date(s.getNgaydat().getTime()));
+               //ps.setDate(7,new Date(s.getNgaytra().getTime()));
+                return ps.executeUpdate() >0;
             } catch (Exception e) {
                 e.printStackTrace();
             }
                     return false;
         }
-        
-        public ArrayList<Lichdatphong> GetLichdatphong()
+     
+        public ArrayList<Phong> GetPhong()
         {
-             ArrayList<Lichdatphong> list =new  ArrayList<Lichdatphong>();
-             String sql="SELECT * FROM tbLICHDATPHONG";
+             ArrayList<Phong> list = new  ArrayList<Phong>();
+             String sql="SELECT * FROM PHONG";
              try {
                 PreparedStatement ps=conn.prepareStatement(sql);
                 ResultSet rs= ps.executeQuery();
                  while (rs.next())
                  {
-                     Lichdatphong Beo=new Lichdatphong();
+                     Phong Beo=new Phong();
                      Beo.setMaPhong(rs.getInt("MaPhong"));
                      Beo.setTenPhong(rs.getString("TenPhong"));
                      Beo.setLoaiPhong(rs.getString("LoaiPhong"));
-                     Beo.setGiaPhong(rs.getDouble("GiaPhong"));
-                     Beo.setTinhTrang(rs.getString("TinhTrangPhong"));
-                     Beo.setNgaydat(rs.getDate("NgayBDThue"));
-                     Beo.setNgaytra(rs.getDate("NgayKTThue"));
+                     Beo.setGiaPhong(rs.getInt("GiaPhong"));
+                     Beo.setTinhTrang(rs.getString("TinhTrang"));
+                     Beo.setGhiChu(rs.getString("GhiChu"));
                    list.add(Beo);
                      
                  }
